@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="texto">
+    <input type="button" value="checar" onclick="pais()">
+    <div id="res">
+
+    </div>
+    <script>
+        function pais(params) {
+            var p = document.getElementById('texto')
+            var r = document.getElementById('res')
+            if (p == "Brasil") {
+                r.innerHTML = '<p>Você é brasileiro</p>'
+            } else {
+                r.innerHTML = '<p>Você é estrangeiro</p>'
+            }
+        }
+    </script>
+</body>
+</html>
