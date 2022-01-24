@@ -58,11 +58,31 @@ body {
 }
 
 #commands > button{
+    background-color: rgba(153, 153, 153, 0.151);
     display: block;
     width: 33%;
     padding: 0 10px;
+    font-weight: 900;
+
     border-radius: 55%;
-    border: none;
+    border: unset 1px solid;
+    text-shadow: 2px 2px 10px rgb(252, 252, 252);
+}
+
+#green-btn:hover {
+    color: green;
+}
+
+#yellow-btn:hover {
+    color: rgb(179, 179, 1);
+}
+
+#red-btn:hover {
+    color: red;
+}
+
+#auto-btn:hover {
+    color: lightblue;
 }
 
 @media (max-width: 350px) {

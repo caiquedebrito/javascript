@@ -1,7 +1,7 @@
-// const greenBtn = document.querySelector("#green-btn")
-// const yellowBtn = document.querySelector("#yellow-btn")
-// const redBtn = document.querySelector("#red-btn")
-const autoBtn = document.querySelector("#auto")
+const greenBtn = document.querySelector("#green-btn")
+const yellowBtn = document.querySelector("#yellow-btn")
+const redBtn = document.querySelector("#red-btn")
+const autoBtn = document.querySelector("#auto-btn")
 
 const yellowLight = document.querySelector("#yellow")
 const greenLight = document.querySelector("#green")
@@ -92,27 +92,36 @@ autoBtn.addEventListener("click", () => {
     }
 })
 
-// yellowBtn.addEventListener("click", function(){
-//     yellowLight.style.backgroundColor = 'yellow'
-// })
+yellowBtn.addEventListener("click", function(){
+    stopTrafficLight()
+    yellowLight.style.backgroundColor = 'yellow'
+    yellowLight.style.boxShadow = '1px -7px 24px 5px #ffec13, 1px 7px 24px 5px #ffec13'
+})
 
-// greenBtn.addEventListener("click", function(){
-//     greenLight.style.backgroundColor = 'green'
-// })
+greenBtn.addEventListener("click", function(){
+    stopTrafficLight()
+    greenLight.style.backgroundColor = 'green'
+    greenLight.style.boxShadow = '1px -7px 24px 5px #02b907, 1px 7px 24px 5px #02b907'
+})
 
-// redBtn.addEventListener("click", function(){
-//     redLight.style.backgroundColor = 'red'
-// })
+redBtn.addEventListener("click", function(){
+    stopTrafficLight()
+    redLight.style.backgroundColor = 'red'
+    redLight.style.boxShadow = '1px -7px 24px 5px #ff1313, 1px 7px 24px 5px #ff1313'
+})
 
-// yellowBtn.addEventListener("mouseleave", function(){
-//     yellowLight.style.backgroundColor = '#4d4d32'
-// })
+yellowBtn.addEventListener("mouseleave", function(){
+    yellowLight.style.boxShadow = '1px -7px 10px gray, 1px 7px 10px gray'
+    yellowLight.style.backgroundColor = '#4d4d32'
+})
 
-// greenBtn.addEventListener("mouseleave", function(){
-//     greenLight.style.backgroundColor = '#1d2e1d'
-// })
+greenBtn.addEventListener("mouseleave", function(){
+    greenLight.style.boxShadow = '1px -7px 10px gray, 1px 7px 10px gray'
+    greenLight.style.backgroundColor = 'rgb(54, 92, 54)'
+})
 
-// redBtn.addEventListener("mouseleave", function(){
-//     redLight.style.backgroundColor = '#5a3939'
-// })
+redBtn.addEventListener("mouseleave", function(){
+    redLight.style.boxShadow = '1px -7px 10px gray, 1px 7px 10px gray'
+    redLight.style.backgroundColor = '#5a3939'
+})
 
