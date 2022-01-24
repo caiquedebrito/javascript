@@ -1,12 +1,13 @@
-const greenBtn = document.querySelector("#green-btn")
-const yellowBtn = document.querySelector("#yellow-btn")
-const redBtn = document.querySelector("#red-btn")
-const autoBtn = document.querySelector("#auto-btn")
+const greenBtn = document.querySelector("#green-btn"),
+yellowBtn = document.querySelector("#yellow-btn"), 
+redBtn = document.querySelector("#red-btn"),
+autoBtn = document.querySelector("#auto-btn")
 
-const yellowLight = document.querySelector("#yellow")
-const greenLight = document.querySelector("#green")
-const redLight = document.querySelector("#red")
+const yellowLight = document.querySelector("#yellow"),
+greenLight = document.querySelector("#green"),
+redLight = document.querySelector("#red")
 
+// Variáveis reponsáveis por controlar a ordem das luzes
 let key = 0, next = false
 
 function greenLightOn() {
@@ -48,8 +49,8 @@ function redLightOff() {
     redLight.style.boxShadow = '1px -7px 10px gray, 1px 7px 10px gray'
 }
 
-let onOf = true, trafficLightKey;
-
+// Variáveis responsáveis por ligar e desligar o semáforo
+let onOf = false, trafficLightKey;
 
 function startTrafficLight() {
     greenLightOn()
