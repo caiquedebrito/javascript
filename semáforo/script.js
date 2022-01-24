@@ -53,11 +53,11 @@ function redLightOff() {
 let onOf = false, trafficLightKey;
 
 function startTrafficLight() {
-    greenLightOn()
+    redLightOn()
     trafficLightKey = setInterval(() => {
         switch (key) {
             case 0: 
-                greenLightOn()
+                redLightOn()
                 break
             case 1:
                 yellowLightOff()
@@ -70,7 +70,7 @@ function startTrafficLight() {
                 break;
             case 3:
                 yellowLightOff()
-                redLightOn()
+                greenLightOn()
                 break;
         }
     }, 5000);
