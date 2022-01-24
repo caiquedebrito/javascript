@@ -26,9 +26,9 @@ function yellowLightOn() {
     yellowLight.style.backgroundColor = 'yellow'
     yellowLight.style.boxShadow = '1px -7px 24px 5px #ffec13, 1px 7px 24px 5px #ffec13'
     if (next) {
-        key = 3
-    } else {
         key = 1
+    } else {
+        key = 3
     }
 }
 
@@ -61,11 +61,11 @@ function startTrafficLight() {
                 break
             case 1:
                 yellowLightOff()
-                greenLightOn()
+                redLightOn()
                 break;
             case 2:
-                greenLightOff()
                 redLightOff()
+                greenLightOff()
                 yellowLightOn()
                 break;
             case 3:
