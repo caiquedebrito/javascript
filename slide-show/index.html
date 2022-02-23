@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section {
+            position: relative;
+            display: flex;
+            max-width: 1066px;
+            max-height: 600px;
+            overflow: hidden;
+        }
+
+        .img {
+            display: none;
+        }
+
+        .next, .prev {
+            color: white;
+            font-size: 100px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .next {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="img">
+            <img src="img/city-1.jpg" alt="Cidade 1">
+        </div>
+        <div class="img">
+            <img src="img/city-2.jpg" alt="Cidade 2">
+        </div>
+        <div class="img">
+            <img src="img/city-3.jpg" alt="Cidade 3">
+        </div>
+        <div class="img">
+            <img src="img/city-4.jpg" alt="Cidade 4">
+        </div>
+        <div class="img">
+            <img src="img/city-5.jpg" alt="Cidade 5">
+        </div>
+        <div class="prev" onclick="slideShow(-1)">&lsaquo;</div>
+        <div class="next" onclick="slideShow(1)">&rsaquo;</div>
+    </section>
+
+    <script>
+        let c = 0;
+        const imgs = document.getElementsByClassName('img')
+        // console.log(imgs[c.st)
+
+        function slideShow(n) {
+            console.log("antes ",c)
+            c += n
+            for (let i = 0; i < imgs.length; i++) {
+                imgs[i].style.display = "none"
+            }
+            
+            if (c >= imgs.length) {
+                c = 0;
+            }
+            if (c < 0) {
+                c = imgs.length - 1;
+            }
+            console.log('atual ', c)
+            imgs[c].style.display = "block"
+        }
+        imgs[c].style.display = "block"
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 100%;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #b8b8b8;
+        }
+
+        .content {
+            display: none;
+            padding: 1rem;
+            border: 1px solid gray;
+        }
+
+        .toggle {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button class="button">Section 1 <span>+</span></button>
+        <div class="content"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error eius explicabo voluptas iste assumenda voluptatem veniam iusto labore officia, repellat consectetur numquam. Illo, amet odio eos a iste quia incidunt.</p></div>
+    </div>
+    <div>
+        <button class="button">Section 2 <span>+</span></button>
+        <div class="content"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error eius explicabo voluptas iste assumenda voluptatem veniam iusto labore officia, repellat consectetur numquam. Illo, amet odio eos a iste quia incidunt.</p></div>
+    </div>
+    <div>
+        <button class="button">Section 3 <span>+</span></button>
+        <div class="content"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error eius explicabo voluptas iste assumenda voluptatem veniam iusto labore officia, repellat consectetur numquam. Illo, amet odio eos a iste quia incidunt.</p></div>
+    </div>
+
+    <script>
+        const button = document.getElementsByClassName('button')
+        const cont = document.querySelectorAll('.content')
+
+        for (let i = 0; i < button.length; i++) {
+
+            button[i].addEventListener('click', () => {
+                for (let j = 0; j < cont.length; j++) {
+                    if (j !== i && cont[j].classList[1]) {
+                        cont[j].classList.remove('toggle')
+                        button[j].children[0].textContent = "+"
+                    }
+                }
+
+                if (button[i].children[0].textContent === "+") {
+                    button[i].children[0].textContent = '-'
+                } else {
+                    button[i].children[0].textContent = "+"
+                }
+                cont[i].classList.toggle('toggle')
+            })
+        }
+    </script>
+</body>
+</html>
