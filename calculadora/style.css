@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'Fun Games';
+    src: url('font/Fun Games.otf') format('opentype'), url('font/Fun Games.ttf') format('truetype');
+    font-weight: bold;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculadora {
+    max-width: 250px;
+    background-color: rgb(59, 59, 59);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 12px 12px 15px -6px #868686;
+}
+
+.row {
+    display: flex;
+    padding: 5px;
+}
+
+button {
+    font-family: 'Fun games', monospace;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.painel {
+    font-family: 'Fun games', monospace;
+    text-align: right;
+    width: 100%;
+    height: 34px;
+    font-size: 2.3rem;
+    border: 1px solid rgb(254, 255, 252);
+    overflow: hidden;
+    background-color: rgb(209, 235, 116);
+    margin-bottom: 3px;
+}
+ 
+p {
+    text-align: center;
+    color: rgb(240, 245, 245);
+    padding: 5px 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
