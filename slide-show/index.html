@@ -10,6 +10,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+            height: 97vh;
         }
 
         section {
@@ -22,6 +24,11 @@
 
         .img {
             display: none;
+            width: 100%;
+        }
+
+        .img img {
+            width: 100%;
         }
 
         .next, .prev {
@@ -31,10 +38,32 @@
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
+            opacity: 0;
+            transition: opacity .7 ease;
         }
 
         .next {
             right: 0;
+        }
+
+        .next:hover, .prev:hover {
+            opacity: 1;
+        }
+
+        .mini {
+            display: flex;
+            height: 120px;
+            max-width: 1066px;
+        }
+
+        .img-mini {
+            opacity: .6;
+            transition: opacity .5s ease;
+            cursor: pointer;
+        }
+
+        .img-mini img{
+            width: 100%;
         }
     </style>
 </head>
@@ -57,19 +86,35 @@
         </div>
         <div class="prev" onclick="slideShow(-1)">&lsaquo;</div>
         <div class="next" onclick="slideShow(1)">&rsaquo;</div>
+        
     </section>
+    <div class="mini">
+        <div class="img-mini">
+            <img src="img/city-1.jpg">
+        </div>
+        <div class="img-mini">
+            <img src="img/city-2.jpg">
+        </div>
+        <div class="img-mini">
+            <img src="img/city-3.jpg">
+        </div>
+        <div class="img-mini">
+            <img src="img/city-4.jpg">
+        </div>
+        <div class="img-mini">
+            <img src="img/city-5.jpg">
+        </div>
+    </div>
 
     <script>
         let c = 0;
         const imgs = document.getElementsByClassName('img')
+        const miniImgs = document.getElementsByClassName('img-mini')
         // console.log(imgs[c.st)
 
         function slideShow(n) {
-            console.log("antes ",c)
+            console.log(n)
             c += n
-            for (let i = 0; i < imgs.length; i++) {
-                imgs[i].style.display = "none"
-            }
             
             if (c >= imgs.length) {
                 c = 0;
@@ -77,11 +122,29 @@
             if (c < 0) {
                 c = imgs.length - 1;
             }
-            console.log('atual ', c)
-            imgs[c].style.display = "block"
+            console.log(c)
+            config(c)
         }
-        imgs[c].style.display = "block"
 
+        function config(n) {
+            for (let i = 0; i < imgs.length; i++) {
+                imgs[i].style.display = 'none'
+                miniImgs[i].style.opacity = '.6'
+            }
+
+            miniImgs[n].style.opacity = '1'
+            imgs[n].style.display = 'block'
+        }
+
+        miniImgs[c].style.opacity = '1'
+        imgs[c].style.display = 'block'
+
+        for (let i in miniImgs) {
+            miniImgs[i].addEventListener('click', () => {
+                c = +i;
+                config(c)
+            })
+        }
     </script>
 </body>
 </html>
